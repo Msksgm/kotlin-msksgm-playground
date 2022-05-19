@@ -10,6 +10,9 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 class DemoApplication(val jdbcTemplate: NamedParameterJdbcTemplate) : ApplicationRunner {
     override fun run(args: ApplicationArguments?) {
         InsertCommandImpl(jdbcTemplate).perform("John", "Smith")
+        println("--------")
+        SelectAllQueryImpl(jdbcTemplate).perform().forEach { println(it) }
+        println("--------")
     }
 }
 
