@@ -11,6 +11,8 @@ class DemoApplication(val jdbcTemplate: JdbcTemplate): ApplicationRunner {
 	override fun run(args: ApplicationArguments?) {
 		InsertCommandImpl(jdbcTemplate).perform("John", "Smith")
 		println("--------")
+		SelectAllQueryImpl(jdbcTemplate).perform().forEach { println(it) }
+		println("--------")
 	}
 }
 
