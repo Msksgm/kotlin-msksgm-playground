@@ -13,6 +13,8 @@ class DemoApplication(val jdbcTemplate: NamedParameterJdbcTemplate) : Applicatio
         println("--------")
         SelectAllQueryImpl(jdbcTemplate).perform().forEach { println(it) }
         println("--------")
+        SelectSatoOrSuzukiQueryImpl(jdbcTemplate).perform().forEach { println(it) }
+        println("--------")
     }
 }
 
